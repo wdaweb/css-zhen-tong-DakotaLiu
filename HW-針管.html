@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>針管</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: Verdana, Geneva, Tahoma, 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .syringe {
+            width: 600px;
+            height: 200px;
+            background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.5) 45%, black 45%, black 55%, rgba(255, 255, 0, 0.5) 55%),
+                linear-gradient(transparent 15%, white 15%),
+                repeating-linear-gradient(90deg, transparent 0px, transparent 19px, black 20px);
+            border: 2px solid #999;
+            position: relative;
+            margin: auto;
+            font-size: 1.5rem;
+            color: #999;
+            box-sizing: border-box;
+            text-align: left;
+            line-height: 350px;
+
+        }
+
+        /* 針管+針 */
+        .syringe::before {
+            content: "────────";
+            padding-left: 900px;
+            width: 300px;
+            line-height: 120px;
+            position: absolute;
+            box-sizing: border-box;
+            background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+            border: 2px solid #999;
+            top: calc(50% - 60px);
+            left: -200px;
+            border-radius: 0 10px 10px 0;
+            z-index: -1;
+        }
+
+        /* 按壓 */
+        .syringe::after {
+            content: '';
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: linear-gradient(180deg, white 0%, lightgrey 47.5%, lightgrey 52.5%, white 100%), linear-gradient(transparent 15%, white 15%);
+            border: 2px solid #999;
+            top: 0;
+            left: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="syringe">Made in Taiwan</div>
+</body>
+
+</html>
